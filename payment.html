@@ -7,10 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Your Shopping Cart</h1>
-  <div id="cart" class="cart-items"></div>
-  <button id="paymentBtn">Proceed to Payment</button>
+    <div class="payment-container">
+        <h1>Order Summary</h1>
+        
+        <!-- Cart Items List -->
+        <div id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
 
-    <script src="script.js"></script>
+        <div class="total">
+            <p><strong>Total:</strong> $<span id="total-price">0.00</span></p>
+        </div>
+
+        <!-- Payment Button -->
+        <button id="payment-button">Proceed to Payment</button>
+    </div>
+
+    <script src="food.js"></script>
 </body>
 </html>
