@@ -180,7 +180,7 @@ function togglePasswordVisibility() {
   const toggleIcon = document.querySelector('.toggle-password');
   
   // Check if the passwordField exists to avoid errors
-  if (passwordField) {
+  if (passwordField && toggleIcon) {
     if (passwordField.type === 'password') {
       passwordField.type = 'text';
       toggleIcon.textContent = '🙈'; // Change icon to hide icon
