@@ -174,3 +174,22 @@ function closeAlert() {
     // For now, let's assume we just show a simple confirmation
     // Make sure your backend is set up to handle M-Pesa payment request
   }
+// Function to toggle password visibility and icon
+function togglePasswordVisibility() {
+  const passwordField = document.getElementById('loginPassword');
+  const toggleIcon = document.querySelector('.toggle-password');
+  
+  // Check if the passwordField exists to avoid errors
+  if (passwordField) {
+    if (passwordField.type === 'password') {
+      passwordField.type = 'text';
+      toggleIcon.textContent = '🙈'; // Change icon to hide icon
+    } else {
+      passwordField.type = 'password';
+      toggleIcon.textContent = '👁'; // Change icon to show icon
+    }
+  } else {
+    console.error("Password field not found");
+  }
+}
+
