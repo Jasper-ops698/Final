@@ -81,23 +81,22 @@ function displayCart(a){
         }).join('')
     }
 }
-
- // Handle payment button click
- document.getElementById('pay-button').addEventListener('click', function() {
-    const grandTotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-    const mpesaNumber = prompt("Enter your M-Pesa number:");
-    if (mpesaNumber) {
-        alert(`Processing payment of KSh ${grandTotal} from M-Pesa number ${mpesaNumber}`);
-        // Here you could implement actual payment logic via M-Pesa API
-    } else {
-        alert("Payment cancelled.");
-    }
 });
 
-        // Function to display the cart items
+function addToCart(item) {
+    // Retrieve the current cartitems from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the new item to the cart
+    cart.push(item);
+
+    // Store the updated cart back into the localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+// Function to display the cart items
         function displayCartItems() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const totalPriceElement = document.getElementById('total-price');
+            const cartItemsContainer = document.getElementById('cartItems');
+            const totalPriceElement = document.getElementById('total');
             let total = 0;
 
             // Retrieve cart items from localStorage
@@ -135,3 +134,6 @@ function displayCart(a){
 
         // Initialize cart display
         displayCartItems();
+
+
+        
