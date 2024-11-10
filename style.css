@@ -1,0 +1,312 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial sans-serif;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('pics/3.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: contain;
+        background-attachment: scroll;
+    }
+}
+
+.weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #f0f0f5;
+}
+
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.form.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+h1 {
+    font-size: 1,5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1,5rem;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.form h2 {
+    font-size: 1,5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form label {
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form input:focus {
+    border-color: #0070f3;
+}
+
+.form button {
+    width: 100%;
+    padding: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #005bb5;
+}
+
+.form-footer {
+    margin-top: 1rem;
+    text-align: center;
+    color: #555;
+}
+
+.form-footer a {
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 2.5rem;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.alert-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.alert-content {
+    background: #fff;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Alert message text*/
+.alert-content p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Ok button */
+.alert-content button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.alert-content button:hover {
+    background-color: #0056b3;
+}
+
+#city {
+    padding: 8px;
+    width: 150px;
+}
+
+.button {
+    padding: 8px;
+}
+
+#weatherData {
+    margin-top: 20px;
+    display: inherit;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container {
+    text-align: center;
+  }
+
+  .categories {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .category-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .category-btn.food {
+    background-color: #ffcc99;
+  }
+
+  .category-btn.clothing {
+    background-color: #99ccff;
+  }
+
+  .category-btn.second-hand {
+    background-color: #99ff99;
+  }
+
+  .category-btn:hover {
+    opacity: 0.8;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 30px;
+    width: 55vh;
+    background-color: whitesmoke;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+   /* Basic styling for cart and payment button */
+    .cart-items {
+      margin: 20px;
+    }
+    .cart-item {
+      margin-bottom: 10px;
+    }
+    #paymentBtn {
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }

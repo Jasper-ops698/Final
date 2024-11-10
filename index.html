@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Station</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mtwapa Station😎</h1>
+    <p>Weather to order something...Free deliveries🛺</p>
+    <div class="weather">
+    <input type="text" id="city" placeholder="Enter City name"/>
+    <button class="button" id="getWeatherBtn">Get Weather</button>
+
+    <button class="button" id="toggleUnitBtn">Switch to ℉</button>
+    </div>
+    
+    <div id="weatherData"></div>
+
+    <div class="form-container">
+        <div id="customAlert" class="alert-box" style="display: none;">
+            <div class="alert-content">
+                <p id="alertMessage">NOTE!</p>
+                <button onclick="closeAlert()">OK</button>
+            </div>
+        </div>
+        <div class="form-wrapper">
+            <form id="signupForm" class="form" onsubmit="signUpUser(event)">
+                <h2>Sign Up</h2>
+    
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+        
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" minlength="4" required>
+        
+                <button type="submit">Sign Up</button>
+    
+                <p class="form-footer">
+                    Already have an account? <a href="#" onclick="toggleForms()">Log In</a>
+                </p>
+            </form>
+            <form id="loginForm" class="form active" onsubmit="loginUser(event)">
+                <h2>Log In</h2>
+    
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail"placeholder="Enter your email" required>
+    
+                <label for="loginPassword">Password</label>
+                <div class="password-container">
+                    <input type="password" id="loginPassword"placeholder="Enter your password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility()">🙈</span>
+                </div>
+    
+                <button type="submit" id="loginBtn">Login</button>
+
+                <div id="loginModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                      <span id="closeModalBtn" class="close">&times;</span>
+                      <div class="container">
+                        <h1>Select a Category to Shop</h1>
+                        <div class="categories">
+                          <a href="food.html" class="category-btn food">Food Store</a>
+                          <a href="clothing.html" class="category-btn clothing">Clothing Store</a>
+                          <a href="secondhand.html" class="category-btn second-hand">Second-Hand Items</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                <p class="form-footer">
+                    Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a>
+                </p>
+            </form>
+        </div> 
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
