@@ -93,3 +93,45 @@ function displayCart(a){
         alert("Payment cancelled.");
     }
 });
+
+        // Function to display the cart items
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+            let total = 0;
+
+            // Retrieve cart items from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Clear any previous cart items
+            cartItemsContainer.innerHTML = '';
+
+            // If cart is empty, display a message
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>No items in your cart.</p>';
+                totalPriceElement.textContent = '0.00';
+                return;
+            }
+
+            // Loop through cart items and display them
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = <p>${item.name} - $${item.price.toFixed(2)}</p>;
+                cartItemsContainer.appendChild(itemElement);
+                total += item.price;
+            });
+
+            // Update the total price
+            totalPriceElement.textContent = total.toFixed(2);
+        }
+
+        // Payment button click handler
+        document.getElementById('payment-button').addEventListener('click', () => {
+            alert('Redirecting to payment gateway...');
+            // Redirect to a payment processing page
+            window.location.href = "thank-you.html"; // Redirect to a thank you page after payment
+        });
+
+        // Initialize cart display
+        displayCartItems();
